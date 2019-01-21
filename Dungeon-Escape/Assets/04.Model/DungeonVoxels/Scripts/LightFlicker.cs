@@ -8,7 +8,6 @@ public class LightFlicker : MonoBehaviour {
      
     
     private float _random_Noise_Range;
-    private float _random_Shadow_Range;
     
     private Light _light; 
      
@@ -20,9 +19,7 @@ public class LightFlicker : MonoBehaviour {
  
      void Update(){
          float noise = Mathf.PerlinNoise(_random_Noise_Range, Time.time);
-         _random_Shadow_Range = Random.Range(0.6f, 1f);
          _light.intensity = Mathf.Lerp(minIntensity, maxIntensity, noise);
          _light.shadows = LightShadows.Soft;
-         _light.shadowRadius = _random_Shadow_Range;
      }
 }

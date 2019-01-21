@@ -93,6 +93,7 @@ public class GameManager : MonoBehaviour
    private void Awake()
    {
       _instance = GetComponent<GameManager>();
+      On_Start_Setting();
       LoadSGame();
    }
 
@@ -182,6 +183,7 @@ public class GameManager : MonoBehaviour
    {
       GameState = State.Gaiming;
       PauseUi.SetActive(false);
+      Cursor.visible = false;
    }
    
    public void GameOver()
@@ -194,6 +196,7 @@ public class GameManager : MonoBehaviour
    public void Pause()
    {
       GameState = State.Pause;
+      Cursor.visible = true;
    }
    
    void GameRestart()
@@ -334,6 +337,13 @@ public class GameManager : MonoBehaviour
    }
    // ----------------------------------------
 
+   void On_Start_Setting()
+   {
+      // 16 : 9 해상도, 전체회면
+      Screen.SetResolution(Screen.width,(Screen.width * 16)/9,true);
+      // 마우스 숨기기
+      Cursor.visible = false;
+   }
    
    string AddText(string originalText,string add)
    {

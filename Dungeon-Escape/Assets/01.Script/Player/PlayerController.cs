@@ -74,10 +74,8 @@ public class PlayerController : MonoBehaviour
         
         //depth of field Setting
         _dofSetting = _postProcessingBehaviour.profile.depthOfField.settings;
-        _dofSetting.focusDistance = (transform.position - MainCamera.transform.position).magnitude;
         
         _postProcessingBehaviour.profile.depthOfField.settings = _dofSetting;
-        
     }
 
     private void FixedUpdate()
@@ -127,7 +125,7 @@ public class PlayerController : MonoBehaviour
 
         
         // ----------------------------------------
-        // Move Animation
+        /* Move Animation */
         // ----------------------------------------
 
         if (move != Vector2.zero)
@@ -267,8 +265,6 @@ public class PlayerController : MonoBehaviour
     /// <param name="isEnter">is Enter to Object</param>
     /// <param name="tagName">Object's tag</param>
     /// <param name="zoomPosition">where the camera fix to position</param>
-    /// <param name="velocity">damp velocity</param>
-    /// <param name="dampTime">damp time</param>
     void Zoom_In_Camera(bool isEnter, string tagName, Transform zoomPosition)
     {
         if (isEnter)
@@ -286,7 +282,7 @@ public class PlayerController : MonoBehaviour
 
 
     // ----------------------------------------
-    // Play Die Animation with camera shake
+    /* Play Die Animation with camera shake */
     // ----------------------------------------
     public void DieAnimation()
     {
@@ -297,7 +293,7 @@ public class PlayerController : MonoBehaviour
     
     
     // ----------------------------------------
-    // Help
+    /* Help */
     // ----------------------------------------
     void Show_Help_Key(GameObject helpKeyName)
     {
@@ -318,7 +314,7 @@ public class PlayerController : MonoBehaviour
     // ----------------------------------------
 
     // ----------------------------------------
-    // Show Heart beat effect and vignette effect
+    /* Show Heart beat effect and vignette effect */
     // ----------------------------------------
     void Start_Hit_Effect()
     {
