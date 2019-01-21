@@ -108,7 +108,7 @@ public class CameraController : MonoBehaviour
     }
     
     /// <summary>
-    /// Setting Behavior of Zooming of Camera
+    /// Setting Behavior of Camera Zoom
     /// </summary>
     /// <param name="isEnter">if is enter object : true</param>
     /// <param name="tagName">object's tag name</param>
