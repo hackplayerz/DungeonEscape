@@ -2896,36 +2896,6 @@ PrefabInstance:
       propertyPath: MainCamera
       value: 
       objectReference: {fileID: 534669904}
-    - target: {fileID: 8235475817044048328, guid: 3846fad2cd9d9744c843a1d2cd6f211b,
-        type: 3}
-      propertyPath: MyWellEnterSetting.focusDistance
-      value: 1.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 8235475817044048328, guid: 3846fad2cd9d9744c843a1d2cd6f211b,
-        type: 3}
-      propertyPath: MyCommonSetting.focusDistance
-      value: 2.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8235475817044048328, guid: 3846fad2cd9d9744c843a1d2cd6f211b,
-        type: 3}
-      propertyPath: MyCommonSetting.useCameraFov
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8235475817044048328, guid: 3846fad2cd9d9744c843a1d2cd6f211b,
-        type: 3}
-      propertyPath: MyWellEnterSetting.aperture
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8235475817044048328, guid: 3846fad2cd9d9744c843a1d2cd6f211b,
-        type: 3}
-      propertyPath: MyCommonSetting.aperture
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8235475817044048328, guid: 3846fad2cd9d9744c843a1d2cd6f211b,
-        type: 3}
-      propertyPath: MyWellEnterSetting.focalLength
-      value: 24
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3846fad2cd9d9744c843a1d2cd6f211b, type: 3}
 --- !u!1001 &1088494499
