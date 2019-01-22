@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
     private bool _isIncraseing = false;
     
     private CameraController _cameraController;
-    private Rigidbody _rigidbody = null;
+    private Rigidbody rigidbody = null;
     private Animator _animator = null;
     private AudioSource _audioSource = null;
     
@@ -61,12 +61,12 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         MainCamera = Camera.main;
-        _rigidbody = GetComponent<Rigidbody>();
+        rigidbody = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
         _cameraController = Camera.main.GetComponent<CameraController>();
         _audioSource = GetComponent<AudioSource>();
         
-        _rigidbody.transform.position = GameManager.Instance().LoadSGame();
+        rigidbody.transform.position = GameManager.Instance().LoadSGame();
         _postProcessingBehaviour = MainCamera.GetComponent<PostProcessingBehaviour>();
         // Vignette setting
         Reset_Vignette_Setting();
@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
             Move();
         }
 
-        if (_rigidbody.position.y < -10)
+        if (rigidbody.position.y < -10)
         {
             GameManager.Instance().GameOver();
         }
@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
         float zAxisRaw = Input.GetAxisRaw("Horizontal");
         float xAxisRaw = -Input.GetAxisRaw("Vertical");
         Player_Animation_Controller(zAxisRaw, xAxisRaw);
-        _rigidbody.transform.position += new Vector3(xAxisRaw, 0, zAxisRaw) * Speed * Time.fixedDeltaTime;
+        rigidbody.transform.position += new Vector3(xAxisRaw, 0, zAxisRaw) * Speed * Time.fixedDeltaTime;
     }
 
     void Player_Animation_Controller(float forward, float left)
@@ -108,17 +108,17 @@ public class PlayerController : MonoBehaviour
 
         if (!left.Equals(0))
         {
-            _rigidbody.rotation = Quaternion.Euler(0 , 90 * left, 0);
+            rigidbody.rotation = Quaternion.Euler(0 , 90 * left, 0);
         }
         else
         {
             if (forward>= .1f)
             {
-                _rigidbody.rotation = Quaternion.identity;
+                rigidbody.rotation = Quaternion.identity;
             }
             else if(forward <= -.1f)
             {
-                _rigidbody.rotation = Quaternion.Euler(0,180 * forward,0);
+                rigidbody.rotation = Quaternion.Euler(0,180 * forward,0);
             }
         }
         // ----------------------------------------
@@ -146,7 +146,7 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.Instance().Hit(trigger.tag);
             _cameraController.StartCameraShake(.2f,.2f,.8f);
-            _rigidbody.AddForce(-_rigidbody.transform.forward * 200);
+            rigidbody.AddForce(-rigidbody.transform.forward * 200);
             _animator.SetTrigger("Hit");
             _animator.SetBool("IsRun",false);
             

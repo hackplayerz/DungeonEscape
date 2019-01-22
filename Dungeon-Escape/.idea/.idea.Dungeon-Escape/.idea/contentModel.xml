@@ -14,7 +14,6 @@
           <e p="MapController" t="Include">
             <e p="BarrelController.cs" t="Include" />
             <e p="BoxController.cs" t="Include" />
-            <e p="DEBUG.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
           </e>
           <e p="Objcet" t="Include">
